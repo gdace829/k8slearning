@@ -1,0 +1,27 @@
+# permissions for end users to view elasticwebs.
+apiVersion: rbac.authorization.k8s.io/v1
+kind: ClusterRole
+metadata:
+  labels:
+    app.kubernetes.io/name: clusterrole
+    app.kubernetes.io/instance: elasticweb-viewer-role
+    app.kubernetes.io/component: rbac
+    app.kubernetes.io/created-by: operator-elasticweb
+    app.kubernetes.io/part-of: operator-elasticweb
+    app.kubernetes.io/managed-by: kustomize
+  name: elasticweb-viewer-role
+rules:
+- apiGroups:
+  - sjs.gdace829
+  resources:
+  - elasticwebs
+  verbs:
+  - get
+  - list
+  - watch
+- apiGroups:
+  - sjs.gdace829
+  resources:
+  - elasticwebs/status
+  verbs:
+  - get

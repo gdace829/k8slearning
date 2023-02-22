@@ -22,7 +22,7 @@ func main() {
 	} else {
 		kubeconfig = flag.String("kubeconfig", "", "absolute path to the kubeconfig file")
 	}
-	flag.Parse() //等下问问
+	flag.Parse() 
 	//buildkubeconfig从给定的kubeconfig路径构建k8s的clientset
 	//如果kubeconfig为空则返回一个用于在集群内工作的clientset
 	var config *rest.Config
